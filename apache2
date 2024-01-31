@@ -1,0 +1,27 @@
+
+  3-
+  
+d) 
+ RewriteCond %{QUERY_STRING} var=(.+)
+RewriteRule ^page1$ /page2/%1 [R]
+ 
+ e)
+  RewriteRule ^example/(.*)/(.*) /something.cgi?arg=$1&other=$2 [L]
+ 
+ 
+4)
+ 
+<VirtualHost *:80>
+ServerName Os.iti.gov.eg
+DocumentRoot /var/www/html/web
+serverAlias "os.iti.gov.eg"
+</VirtualHost>
+
+
+<Directory /var/www/html/web>
+      Options FollowSysLinks
+      AllowOverride All
+      Require all granted
+</Directory>
+
+
